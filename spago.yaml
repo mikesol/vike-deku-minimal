@@ -1,0 +1,182 @@
+package:
+  name: vike-deku-minimal
+  dependencies:
+    - console
+    - effect
+    - prelude
+    - hyrule
+    - deku-core
+    - deku-dom
+    - deku-css
+workspace:
+  packageSet:
+    registry: 56.4.0
+  extraPackages:
+    deku-core:
+      git: "https://github.com/mikesol/purescript-deku.git"
+      ref: b261a3ec3977e0b0822573fa62960340604cd90c
+      subdir: deku-core
+      dependencies:
+        - aff
+        - arrays
+        - catenable-lists
+        - control
+        - debug
+        - effect
+        - either
+        - fast-vect
+        - filterable
+        - foldable-traversable
+        - foreign-object
+        - free
+        - heterogeneous
+        - hyrule
+        - maybe
+        - newtype
+        - nullable
+        - ordered-collections
+        - prelude
+        - profunctor
+        - quickcheck
+        - record
+        - safe-coerce
+        - st
+        - strings
+        - stringutils
+        - transformers
+        - tuples
+        - unsafe-coerce
+        - untagged-union
+        - web-dom
+        - web-dom-parser
+        - web-events
+        - web-html
+        - web-uievents
+        - yoga-json
+    deku-dom:
+      git: "https://github.com/mikesol/purescript-deku.git"
+      ref: b261a3ec3977e0b0822573fa62960340604cd90c
+      subdir: deku-dom
+      dependencies:
+        - deku-core
+        - hyrule
+        - web-html
+        - web-uievents
+        - web-pointerevents
+        - web-touchevents
+    deku-css:
+      git: "https://github.com/mikesol/purescript-deku.git"
+      ref: b261a3ec3977e0b0822573fa62960340604cd90c
+      subdir: deku-css
+      dependencies:
+        - deku-core
+        - hyrule
+        - css
+    hyrule:
+      repo: "https://github.com/mikesol/purescript-hyrule.git"
+      version: "v2.5.1"
+      dependencies:
+        - effect
+        - avar
+        - js-timers
+        - avar
+        - web-html
+        - unsafe-reference
+        - web-uievents
+    tidy:
+      repo: "https://github.com/natefaubion/purescript-tidy.git"
+      version: "v0.10.0"
+      dependencies:
+        - arrays
+        - dodo-printer
+        - foldable-traversable
+        - lists
+        - maybe
+        - ordered-collections
+        - partial
+        - prelude
+        - language-cst-parser
+        - strings
+        - tuples
+    dodo-printer:
+      repo: "https://github.com/natefaubion/purescript-dodo-printer"
+      version: "master"
+      dependencies:
+        - aff
+        - ansi
+        - arrays
+        - avar
+        - console
+        - "ansi"
+        - "arrays"
+        - "avar"
+        - "console"
+        - "control"
+        - "effect"
+        - "either"
+        - "exceptions"
+        - "foldable-traversable"
+        - "integers"
+        - "lists"
+        - "maybe"
+        - "minibench"
+        - "newtype"
+        - "node-buffer"
+        - "node-child-process"
+        - "node-fs"
+        - "node-os"
+        - "node-path"
+        - "node-process"
+        - "node-streams"
+        - "parallel"
+        - "partial"
+        - "prelude"
+        - "safe-coerce"
+        - "strings"
+        - "tuples"
+    tidy-codegen:
+      repo: "https://github.com/natefaubion/purescript-tidy-codegen"
+      version: "main"
+      dependencies:
+        - aff
+        - ansi
+        - arrays
+        - avar
+        - bifunctors
+        - console
+        - control
+        - dodo-printer
+        - effect
+        - either
+        - enums
+        - exceptions
+        - filterable
+        - foldable-traversable
+        - free
+        - identity
+        - integers
+        - language-cst-parser
+        - lazy
+        - lists
+        - maybe
+        - newtype
+        - node-buffer
+        - node-child-process
+        - node-fs
+        - node-path
+        - node-process
+        - node-streams
+        - ordered-collections
+        - parallel
+        - partial
+        - posix-types
+        - prelude
+        - record
+        - safe-coerce
+        - st
+        - strings
+        - tidy
+        - transformers
+        - tuples
+        - type-equality
+        - unicode
