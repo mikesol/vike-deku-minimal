@@ -18,7 +18,7 @@ const extractDirectoryPath = (filePath) => {
 const outputDir = path.resolve(__dirname, "output/*.Page/index.js");
 
 const createPageFiles = () => (path) => {
-  const dir = `${extractDirectoryPath(path)}/psvike`
+  const dir = `${extractDirectoryPath(path)}`
   const psFileName = path.split("/").slice(-2)[0]
   const dirlen = dir.split("/").length;
   fs.mkdirSync(dir, { recursive: true });
@@ -28,19 +28,15 @@ const createPageFiles = () => (path) => {
 
 export default page;`
   );
-  const route = dir.slice(5,-7);
-  fs.writeFileSync(
-    `${dir}/+route.js`,
-    `export default '${route === '/index' ? '/' : route}';`
-  );
 };
 
 const dekuPlugin = () => ({
   name: "rollup-plugin-vike-deku",
-  buildStart() {
+  config() {
     const files = globSync(outputDir);
     files.forEach(createPageFiles("start"));
-
+  },
+  buildStart() {
     const watcher = chokidar.watch(outputDir, { ignoreInitial: true });
     watcher.on("add", createPageFiles("add"));
     watcher.on("change", createPageFiles("change"));
