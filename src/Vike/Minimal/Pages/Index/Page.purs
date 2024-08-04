@@ -1,8 +1,8 @@
-module Vike.Minimal.Page.Index where
+module Vike.Minimal.Pages.Index.Page where
 
 import Deku.Core (Nut)
 import Deku.DOM as D
-import Vike.Minimal.Page.Index.Counter (counter)
+import Vike.Minimal.Pages.Index.Counter (counter)
 
 page :: Array Nut
 page =

@@ -1,4 +1,4 @@
-module Vike.Minimal.Page.Index.Counter where
+module Vike.Minimal.Pages.Index.Counter where
 
 import Prelude
 

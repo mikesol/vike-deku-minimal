@@ -1,5 +1,6 @@
 import vike from 'vike/plugin'
+import deku from './rollup-plugin-vike-deku';
 
 export default {
-  plugins: [vike()]
+  plugins: [deku(), vike()]
 }
