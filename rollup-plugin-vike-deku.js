@@ -32,11 +32,10 @@ export default page;`
 
 const dekuPlugin = () => ({
   name: "rollup-plugin-vike-deku",
-  config() {
+  buildStart() {
     const files = globSync(outputDir);
     files.forEach(createPageFiles("start"));
-  },
-  buildStart() {
+
     const watcher = chokidar.watch(outputDir, { ignoreInitial: true });
     watcher.on("add", createPageFiles("add"));
     watcher.on("change", createPageFiles("change"));
