@@ -1,3 +1,2 @@
-import { route } from '../output/Vike.Minimal.Pages.Route';
-
+const route = () => true;
 export { route };

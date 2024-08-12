@@ -1,3 +1,3 @@
 export default {
-  passToClient: ["dekuHydrationData"],
+  passToClient: ["dekuHydrationData", "urlPathname"],
 };

@@ -1,10 +1,12 @@
 module Vike.Minimal.Pages.Route where
 
-import Untagged.Union (type (|+|), asOneOf)
+import Deku.Core (Nut, text_)
+import Vike.Minimal.Pages.About.Page as About
+import Vike.Minimal.Pages.Index.Page as Index
 
-route :: { urlPathname :: String } -> Boolean |+| { routeParams :: { route :: String } }
+route :: { urlPathname :: String } -> Array Nut
 route { urlPathname } = case urlPathname of
-  "/" -> asOneOf { routeParams: { route: "index" } }
-  "/about/" -> asOneOf { routeParams: { route: "about" } }
-  "/about" -> asOneOf { routeParams: { route: "about" } }
-  _ -> asOneOf false
+  "/" -> Index.page
+  "/about/" -> About.page
+  "/about" -> About.page
+  _ -> [text_ "Forbidden"]

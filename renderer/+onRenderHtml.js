@@ -5,13 +5,11 @@ import jsdomGlobal from "jsdom-global";
 import { ssrInBody } from "../output/Deku.Toplevel"
 import { layout } from "../output/Vike.Minimal.Renderer.Layout"
 import { toJSON } from "../output/Vike.Minimal.Util";
-import { page as index } from "../output/Vike.Minimal.Pages.Index.Page"
-import { page as about } from "../output/Vike.Minimal.Pages.About.Page"
+import { route } from "../output/Vike.Minimal.Pages.Route"
 
 async function onRenderHtml(pageContext) {
   jsdomGlobal();
-  const { routeParams: { route } } = pageContext;
-  const Page = route === "index" ? index : about;
+  const Page = route(pageContext);
   document.getElementsByTagName("html")[0].innerHTML =
     '<head></head><body></body>';
   const cache = ssrInBody(layout(Page))();
