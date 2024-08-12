@@ -2,12 +2,13 @@ package:
   name: vike-deku-minimal
   dependencies:
     - console
-    - effect
-    - prelude
-    - hyrule
     - deku-core
-    - deku-dom
     - deku-css
+    - deku-dom
+    - effect
+    - hyrule
+    - prelude
+    - untagged-union
 workspace:
   packageSet:
     registry: 56.4.0

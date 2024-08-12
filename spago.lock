@@ -10,6 +10,7 @@ workspace:
         - effect
         - hyrule
         - prelude
+        - untagged-union
       test_dependencies: []
       build_plan:
         - aff
